@@ -1,0 +1,19 @@
+RewriteEngine On
+
+RewriteEngine on
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /index.php [NC,L,QSA]
+
+<FilesMatch "\.(log)$">
+RewriteRule . /index.php [L]
+Order allow,deny
+Deny from all
+</FilesMatch>
+
+
+
+
+Options -Indexes
+ErrorDocument 403 http://%{HTTP_HOST}

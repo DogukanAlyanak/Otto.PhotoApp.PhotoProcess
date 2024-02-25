@@ -1,0 +1,22 @@
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+03:00";
+
+CREATE TABLE `images` (
+  `ID` bigint(20) NOT NULL,
+  `ORIGINAL_FILE_NAME` varchar(500) COLLATE utf8_turkish_ci NOT NULL,
+  `SYSTEM_FILE_NAME` varchar(500) COLLATE utf8_turkish_ci NOT NULL,
+  `QR_CODE` varchar(500) COLLATE utf8_turkish_ci NOT NULL,
+  `SHOW_STATUS` int(1) NOT NULL DEFAULT 1,
+  `CREATE_DATE` datetime NOT NULL DEFAULT current_timestamp(),
+  `UPDATE_DATE` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
+
+ALTER TABLE `images`
+  ADD PRIMARY KEY (`ID`),
+  ADD UNIQUE KEY `QR_CODE` (`QR_CODE`),
+  ADD UNIQUE KEY `SYSTEM_FILE_NAME` (`SYSTEM_FILE_NAME`);
+
+ALTER TABLE `images`
+  MODIFY `ID` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+COMMIT;

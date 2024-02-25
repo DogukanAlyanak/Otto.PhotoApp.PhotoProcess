@@ -1,0 +1,12 @@
+.east-fixed-alert {
+    z-index: 2070;
+    position: fixed;
+    width: 100%;
+    bottom: 10px;
+    left: 0;
+}
+
+.east-fixed-alert .ertalert {
+    width: 100%;
+    bottom: 10px;
+}
