@@ -1,0 +1,13 @@
+{
+    "database": {
+        "database-name" : "",
+        "username" : "",
+        "password" : ""
+    },
+    "users" : [
+        {
+            "username" : "admin",
+            "password" : "admin1234"
+        }
+    ]
+}

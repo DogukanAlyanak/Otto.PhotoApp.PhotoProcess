@@ -1,3 +1,10 @@
+$(document).ready(function() {
+    processImages()
+    setInterval(() => {
+        processImages()
+    }, 20000);
+})
+
 
 $(document).on(`click`, `#removeAllBtn`, function () {
     $(`#removeAllModal`).modal(`show`);
@@ -34,4 +41,23 @@ $(document).on(`click`, `#lastDeleteAllRemoveBtn`, function () {
             })
         }
     })
-}) 
+})
+
+
+function processImages() {
+    console.log("fotoğraflar işleniyor ...");
+    $.ajax({
+        url: window.location.origin + '/get_photo_process',
+        type: "GET",
+        success: function (e) {
+            if (e == "successful") {
+                console.log("fotoğraflar işlendi!");
+            }
+        },
+        error: function (e) {
+            console.log("error");
+            console.log("fotoğraflar işlenemedi!");
+            console.log(e);
+        }
+    })
+}

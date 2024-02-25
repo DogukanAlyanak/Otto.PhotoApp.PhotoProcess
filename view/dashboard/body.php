@@ -41,6 +41,11 @@
         <div class="row">
             <div class="col-lg-6 col-md-12 col-sm-12">
                 <div class="row">
+                    <div class="col-12 mt-2">
+                        <a href="logout" type="button" class="btn btn-md btn-danger btn-block">Çıkış Yap</a>
+                    </div>
+                </div>
+                <div class="row">
                     <div class="col text-center mt-4 mb-2">
                         <img style="width: 250px;" src="img/logo.svg" alt="">
                     </div>

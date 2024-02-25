@@ -1,6 +1,7 @@
 <?php
 
-@$ext = explode('/', substr($_SERVER['REQUEST_URI'], 1));
+$extension = $_SERVER['REQUEST_URI'];
+$ext = @explode('/', substr($extension, 1));
 
 if ($ext[0] == "test") {
     include $root . '/test.php';
@@ -15,6 +16,17 @@ if ($ext[0] == "get_photo_process") {
 
 
 // CONTROLLER PANEL
+
+if ($ext[0] == "admin") {
+    redirect("login");
+    exit;
+}
+
+if ($ext[0] == "logout") {
+    session_destroy();
+    redirect("login");
+    exit;
+}
 
 if ($ext[0] == "login") {
     include $root . '/view/login/page.php';
@@ -52,6 +64,8 @@ if ($ext[0] == "dashboard_delete_image_all_process") {
     include $root . '/view/dashboard/delete_image_all.php';
     exit;
 }
+
+
 
 // 404 Page
 include $root . '/php_modules/bad_request.php';

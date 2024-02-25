@@ -334,4 +334,4 @@ foreach ($processFiles as $i => $file) {
     eastImage($mergedFilePath, 1280, $thumbnailFilePath);
 }
 
-tester("ok");
+echo "successful";
